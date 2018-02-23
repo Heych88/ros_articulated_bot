@@ -2,7 +2,7 @@
 
 <robot name="articulated_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-
+  <xacro:include filename="$(find articulated_bot)/urdf/articulated_bot.gazebo" />
 
   <xacro:property name="wheel_length" value="0.05" />
   <xacro:property name="wheel_radius" value="0.1" />
@@ -47,19 +47,19 @@
         <box size="${chassis_length} ${chassis_width} ${chassis_depth}"/>
       </geometry>
     </collision>
-    <visual name='chassis_visual'>
+    <visual>
       <origin xyz="-${chassis_x_offset} 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size="${chassis_length} ${chassis_width} ${chassis_depth}"/>
       </geometry>
     </visual>
-    <visual name='back_chassis_link_visual'>
+    <visual>
       <origin xyz="-0.025 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".05 .01 .05"/>
       </geometry>
     </visual>
-    <visual name='chassis_pin_visual'>
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <cylinder length="0.06" radius="0.025"/>
@@ -83,7 +83,7 @@
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
       </geometry>
     </collision>
-    <visual name="left_wheel_visual">
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
@@ -115,7 +115,7 @@
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
       </geometry>
     </collision>
-    <visual name="right_wheel_visual">
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
@@ -156,13 +156,13 @@
         <box size="${chassis_length} ${chassis_width} ${chassis_depth}"/>
       </geometry>
     </collision>
-    <visual name='chassis_visual'>
+    <visual>
       <origin xyz="${chassis_x_offset} 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size="${chassis_length} ${chassis_width} ${chassis_depth}"/>
       </geometry>
     </visual>
-    <visual name='front_chassis_link_visual'>
+    <visual>
       <origin xyz="0.025 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".05 .01 .05"/>
@@ -186,7 +186,7 @@
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
       </geometry>
     </collision>
-    <visual name="visual">
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
@@ -218,7 +218,7 @@
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
       </geometry>
     </collision>
-    <visual name="visual">
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
         <cylinder length="${wheel_length}" radius="${wheel_radius}"/>
@@ -251,7 +251,7 @@
         <box size=".05 .05 .05"/>
       </geometry>
     </collision>
-    <visual name='camera_visual'>
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <box size=".05 .05 .05"/>
@@ -283,7 +283,7 @@
         <box size=".1 .1 .1"/>
       </geometry>
     </collision>
-    <visual name='hokuyo_visual'>
+    <visual>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
         <mesh filename="package://articulated_bot/meshes/hokuyo.dae"/>
