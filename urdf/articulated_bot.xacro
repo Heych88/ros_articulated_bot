@@ -141,6 +141,7 @@
     <limit effort="10000" lower="-${steer_angle_limit}" upper="${steer_angle_limit}" velocity="${steer_velocity}"/>
     <joint_properties damping="1.0" friction="1.0"/>
   </joint>
+  
   <link name='front_chassis'>
     <inertial>
       <mass value="${chassis_mass}"/>

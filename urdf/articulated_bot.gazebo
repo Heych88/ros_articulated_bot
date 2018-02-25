@@ -19,6 +19,14 @@
     <material>Gazebo/Black</material>
   </gazebo>
 
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+    <robotNamespace>/</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
@@ -28,7 +36,7 @@
       <rightJoint>right_wheel_hinge</rightJoint>
       <wheelSeparation>0.4</wheelSeparation>
       <wheelDiameter>0.2</wheelDiameter>
-      <torque>10</torque>
+      <torque>50</torque>
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
